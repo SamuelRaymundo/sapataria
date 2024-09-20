@@ -1,6 +1,7 @@
 package org.samuelraymundo.sapataria.entities;
 
 import jakarta.persistence.*;
+import org.samuelraymundo.sapataria.entities.enums.PaymentMethodEnum;
 
 import java.io.Serializable;
 
@@ -13,24 +14,22 @@ public class PaymentMethod implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(nullable = false, length = 50)
-    private String paymentMethod;
+    @Column(nullable = false)
+    private PaymentMethodEnum paymentMethod;
 
-    public PaymentMethod() {
-    }
-
-    public Long getId() {return id;
+    public Long getId() {
+        return id;
     }
 
     public void setId(Long id) {
         this.id = id;
     }
 
-    public String getPaymentMethod() {
+    public PaymentMethodEnum getPaymentMethod() {
         return paymentMethod;
     }
 
-    public void setPaymentMethod(String paymentMethod) {
+    public void setPaymentMethod(PaymentMethodEnum paymentMethod) {
         this.paymentMethod = paymentMethod;
     }
 }
