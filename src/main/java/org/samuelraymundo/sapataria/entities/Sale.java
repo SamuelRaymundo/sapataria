@@ -15,7 +15,7 @@ public class Sale implements Serializable {
     private Long id;
 
     @Column(nullable = false, length = 100)
-    private String Local;
+    private String local;
 
     @Column(nullable = false)
     private Date date;
@@ -37,12 +37,12 @@ public class Sale implements Serializable {
         this.id = id;
     }
 
-    public String getLocal() {
-        return Local;
+    public String getlocal() {
+        return local;
     }
 
-    public void setLocal(String local) {
-        Local = local;
+    public void setlocal(String local) {
+        local = local;
     }
 
     public Date getDate() {
