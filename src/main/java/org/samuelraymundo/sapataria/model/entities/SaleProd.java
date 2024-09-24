@@ -1,12 +1,12 @@
-package org.samuelraymundo.sapataria.entities;
+package org.samuelraymundo.sapataria.model.entities;
 
 import jakarta.persistence.*;
 
 import java.io.Serializable;
 
 @Entity
-@Table(name = "tb_product_purchase")
-public class ProductPurchase implements Serializable {
+@Table(name = "tb_sale_prod")
+public class SaleProd implements Serializable {
     private static final long serialVersionUID = 1L;
 
     @Id
@@ -19,7 +19,17 @@ public class ProductPurchase implements Serializable {
     @Column(nullable = false)
     private Double price;
 
-    public ProductPurchase() {
+    @ManyToOne
+    @JoinColumn(name = "sale_id")
+    private Sale sale;
+
+    @ManyToOne
+    @JoinColumn(name = "product_id")
+    private Product product;
+
+
+
+    public SaleProd() {
     }
 
     public Long getId() {
@@ -45,4 +55,14 @@ public class ProductPurchase implements Serializable {
     public void setPrice(Double price) {
         this.price = price;
     }
+
+    public Sale getSale() {
+        return sale;
+    }
+
+    public Product getProduct() {
+        return product;
+    }
+
+
 }

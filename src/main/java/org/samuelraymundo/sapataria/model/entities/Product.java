@@ -1,9 +1,11 @@
-package org.samuelraymundo.sapataria.entities;
+package org.samuelraymundo.sapataria.model.entities;
 
 
 import jakarta.persistence.*;
 
 import java.io.Serializable;
+import java.util.HashSet;
+import java.util.Set;
 
 @Entity
 @Table(name = "tb_product")
@@ -22,6 +24,13 @@ public class Product implements Serializable {
 
     @Column(nullable = false,length = 50)
     private String model;
+
+    @ManyToOne
+    @JoinColumn(name = "category_id")
+    private Category category;
+
+    @OneToMany(mappedBy = "product")
+    private Set<Size> sizes = new HashSet<>();
 
     public Product() {
     }
@@ -56,5 +65,13 @@ public class Product implements Serializable {
 
     public void setModel(String model) {
         this.model = model;
+    }
+
+    public Category getCategory() {
+        return category;
+    }
+
+    public Set<Size> getSizes() {
+        return sizes;
     }
 }

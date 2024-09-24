@@ -1,7 +1,7 @@
-package org.samuelraymundo.sapataria.entities;
+package org.samuelraymundo.sapataria.model.entities;
 
 import jakarta.persistence.*;
-import org.samuelraymundo.sapataria.entities.enums.PaymentMethodEnum;
+import org.samuelraymundo.sapataria.model.enums.PaymentMethodEnum;
 
 import java.io.Serializable;
 

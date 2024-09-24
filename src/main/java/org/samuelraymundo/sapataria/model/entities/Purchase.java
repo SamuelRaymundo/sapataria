@@ -1,4 +1,4 @@
-package org.samuelraymundo.sapataria.entities;
+package org.samuelraymundo.sapataria.model.entities;
 
 
 import jakarta.persistence.*;
@@ -15,11 +15,21 @@ public class Purchase implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @ManyToOne
+    @JoinColumn(name = "supplier_id")
+    private Supplier supplier;
+
+    @ManyToOne
+    @JoinColumn(name = "employee_id")
+    private Employee employee;
+
+
     @Column(nullable = false)
     private Double total;
 
     @Column(nullable = false)
     private Date date;
+
 
     public Purchase() {
     }

@@ -1,6 +1,6 @@
 package org.samuelraymundo.sapataria.controller;
 
-import org.samuelraymundo.sapataria.entities.Client;
+import org.samuelraymundo.sapataria.model.entities.Client;
 import org.samuelraymundo.sapataria.services.ClientService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;

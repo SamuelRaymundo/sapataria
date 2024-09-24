@@ -1,12 +1,12 @@
-package org.samuelraymundo.sapataria.entities;
+package org.samuelraymundo.sapataria.model.entities;
 
 import jakarta.persistence.*;
 
 import java.io.Serializable;
 
 @Entity
-@Table(name = "tb_sale_prod")
-public class SaleProd implements Serializable {
+@Table(name = "tb_product_purchase")
+public class ProductPurchase implements Serializable {
     private static final long serialVersionUID = 1L;
 
     @Id
@@ -19,7 +19,7 @@ public class SaleProd implements Serializable {
     @Column(nullable = false)
     private Double price;
 
-    public SaleProd() {
+    public ProductPurchase() {
     }
 
     public Long getId() {

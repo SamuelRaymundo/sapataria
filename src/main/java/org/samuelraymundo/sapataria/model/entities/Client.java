@@ -1,9 +1,11 @@
-package org.samuelraymundo.sapataria.entities;
+package org.samuelraymundo.sapataria.model.entities;
 
 import jakarta.persistence.*;
 
 import java.io.Serializable;
 import java.util.Date;
+import java.util.HashSet;
+import java.util.Set;
 
 @Entity
 @Table(name = "tb_client")
@@ -58,6 +60,9 @@ public class Client implements Serializable {
 
     @Column(nullable = false, length = 2)
     private String uf;
+
+    @OneToMany(mappedBy = "client")
+    private Set<Sale> sale = new HashSet<>();
 
     public Client() {
     }
@@ -188,5 +193,9 @@ public class Client implements Serializable {
 
     public void setUf(String uf) {
         this.uf = uf;
+    }
+
+    public Set<Sale> getSale() {
+        return sale;
     }
 }

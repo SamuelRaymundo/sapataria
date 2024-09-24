@@ -1,4 +1,4 @@
-package org.samuelraymundo.sapataria.entities.enums;
+package org.samuelraymundo.sapataria.model.enums;
 
 public enum PaymentMethodEnum {
     CREDIT(1),

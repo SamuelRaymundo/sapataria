@@ -1,4 +1,4 @@
-package org.samuelraymundo.sapataria.entities;
+package org.samuelraymundo.sapataria.model.entities;
 
 import jakarta.persistence.*;
 
@@ -24,6 +24,10 @@ public class Size implements Serializable {
 
     @Column(nullable = false)
     private Integer maximumQuantity;
+
+    @ManyToOne
+    @JoinColumn(name = "product_id")
+    private Product product;
 
 
     public Size() {
@@ -67,5 +71,9 @@ public class Size implements Serializable {
 
     public void setMaximumQuantity(Integer maximumQuantity) {
         this.maximumQuantity = maximumQuantity;
+    }
+
+    public Product getProduct() {
+        return product;
     }
 }

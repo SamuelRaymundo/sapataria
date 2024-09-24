@@ -1,8 +1,10 @@
-package org.samuelraymundo.sapataria.entities;
+package org.samuelraymundo.sapataria.model.entities;
 
 import jakarta.persistence.*;
 
 import java.io.Serializable;
+import java.util.HashSet;
+import java.util.Set;
 
 @Entity
 @Table(name = "tb_employee")
@@ -18,6 +20,12 @@ public class Employee implements Serializable {
 
     @Column(nullable = false, length = 100)
     private String name;
+
+    @OneToMany(mappedBy = "employee")
+    private Set<Sale> sales = new HashSet<>();
+
+    @OneToMany(mappedBy = "employee")
+    private Set<Purchase> purchases = new HashSet<>();
 
     public Employee() {
     }
@@ -44,5 +52,13 @@ public class Employee implements Serializable {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public Set<Sale> getSales() {
+        return sales;
+    }
+
+    public Set<Purchase> getPurchases() {
+        return purchases;
     }
 }

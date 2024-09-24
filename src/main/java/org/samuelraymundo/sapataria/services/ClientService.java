@@ -1,6 +1,6 @@
 package org.samuelraymundo.sapataria.services;
 
-import org.samuelraymundo.sapataria.entities.Client;
+import org.samuelraymundo.sapataria.model.entities.Client;
 import org.samuelraymundo.sapataria.exceptions.ResourceNotFoundException;
 import org.samuelraymundo.sapataria.repositories.ClientRepository;
 import org.springframework.beans.factory.annotation.Autowired;

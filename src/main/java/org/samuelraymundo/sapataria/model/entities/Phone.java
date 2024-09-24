@@ -1,4 +1,4 @@
-package org.samuelraymundo.sapataria.entities;
+package org.samuelraymundo.sapataria.model.entities;
 
 import jakarta.persistence.*;
 
@@ -21,6 +21,8 @@ public class Phone implements Serializable {
 
     @Column(nullable = false, length = 100)
     private String email;
+
+
 
     public Phone() {
     }

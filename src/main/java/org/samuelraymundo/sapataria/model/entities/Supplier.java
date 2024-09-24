@@ -1,8 +1,10 @@
-package org.samuelraymundo.sapataria.entities;
+package org.samuelraymundo.sapataria.model.entities;
 
 import jakarta.persistence.*;
 
 import java.io.Serializable;
+import java.util.HashSet;
+import java.util.Set;
 
 @Entity
 @Table(name = "tb_supplier")
@@ -45,6 +47,9 @@ public class Supplier implements Serializable {
 
     @Column(nullable = false, length = 10)
     private String cep;
+
+    @OneToMany(mappedBy = "supplier")
+    private Set<Purchase> purchase = new HashSet<>();
 
     public Supplier() {
     }
@@ -143,5 +148,9 @@ public class Supplier implements Serializable {
 
     public void setCep(String cep) {
         this.cep = cep;
+    }
+
+    public Set<Purchase> getPurchase() {
+        return purchase;
     }
 }
