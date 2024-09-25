@@ -22,6 +22,9 @@ public class Phone implements Serializable {
     @Column(nullable = false, length = 100)
     private String email;
 
+    @ManyToOne
+    @JoinColumn(name = "supplier_id")
+    private Supplier supplier;
 
 
     public Phone() {

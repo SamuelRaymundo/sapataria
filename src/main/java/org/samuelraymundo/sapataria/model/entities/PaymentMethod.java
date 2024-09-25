@@ -4,6 +4,8 @@ import jakarta.persistence.*;
 import org.samuelraymundo.sapataria.model.enums.PaymentMethodEnum;
 
 import java.io.Serializable;
+import java.util.HashSet;
+import java.util.Set;
 
 @Entity
 @Table(name = "tb_payment_method")
@@ -16,6 +18,9 @@ public class PaymentMethod implements Serializable {
 
     @Column(nullable = false)
     private PaymentMethodEnum paymentMethod;
+
+    @OneToMany(mappedBy = "paymentMethod")
+    private Set<Installment> installments = new HashSet<>();
 
     public Long getId() {
         return id;

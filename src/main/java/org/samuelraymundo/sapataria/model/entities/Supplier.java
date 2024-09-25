@@ -51,6 +51,9 @@ public class Supplier implements Serializable {
     @OneToMany(mappedBy = "supplier")
     private Set<Purchase> purchase = new HashSet<>();
 
+    @OneToMany(mappedBy = "supplier")
+    private Set<Phone> phones = new HashSet<>();
+
     public Supplier() {
     }
 

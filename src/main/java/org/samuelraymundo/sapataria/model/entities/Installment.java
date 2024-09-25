@@ -29,6 +29,18 @@ public class Installment implements Serializable {
     @Column(nullable = false)
     private Double installmentAmount;
 
+    @ManyToOne
+    @JoinColumn(name = "payment_method_id")
+    private PaymentMethod paymentMethod;
+
+    @ManyToOne
+    @JoinColumn(name = "sale_id")
+    private Sale sale;
+
+    @ManyToOne
+    @JoinColumn(name = "purchase_id")
+    private Purchase purchase;
+
     public Installment() {
     }
 

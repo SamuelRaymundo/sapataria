@@ -5,6 +5,8 @@ import jakarta.persistence.*;
 
 import java.io.Serializable;
 import java.util.Date;
+import java.util.HashSet;
+import java.util.Set;
 
 @Entity
 @Table(name = "tb_purchase")
@@ -22,6 +24,9 @@ public class Purchase implements Serializable {
     @ManyToOne
     @JoinColumn(name = "employee_id")
     private Employee employee;
+
+    @OneToMany(mappedBy = "purchase")
+    private Set<Installment> installments = new HashSet<>();
 
 
     @Column(nullable = false)
