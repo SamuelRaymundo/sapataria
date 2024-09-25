@@ -28,7 +28,6 @@ public class SaleProd implements Serializable {
     private Product product;
 
 
-
     public SaleProd() {
     }
 

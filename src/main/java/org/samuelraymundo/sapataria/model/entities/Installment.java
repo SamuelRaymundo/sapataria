@@ -23,7 +23,7 @@ public class Installment implements Serializable {
     @Column(nullable = false)
     private Date installmentDueDate;
 
-    @Column(nullable = false)
+    @Column
     private Date installmentPaymentDate;
 
     @Column(nullable = false)

@@ -43,7 +43,6 @@ public class Sale implements Serializable {
     @OneToMany(mappedBy = "sale")
     private Set<Installment> installments = new HashSet<>();
 
-
     public Sale() {
     }
 

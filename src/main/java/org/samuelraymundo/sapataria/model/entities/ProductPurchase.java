@@ -19,6 +19,14 @@ public class ProductPurchase implements Serializable {
     @Column(nullable = false)
     private Double price;
 
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "purchase_id", referencedColumnName = "id")
+    private Purchase purchase;
+
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "product_id",referencedColumnName = "id")
+    private Product product;
+
     public ProductPurchase() {
     }
 

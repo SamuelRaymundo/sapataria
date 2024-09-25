@@ -6,7 +6,7 @@ public enum PaymentMethodEnum {
     CASH(3),
     PIX(4);
     
-    private int code;
+    private Integer code;
     
     private PaymentMethodEnum(int code) {
         this.code = code;

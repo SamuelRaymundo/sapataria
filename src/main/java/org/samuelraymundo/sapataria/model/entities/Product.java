@@ -32,6 +32,10 @@ public class Product implements Serializable {
     @OneToMany(mappedBy = "product")
     private Set<Size> sizes = new HashSet<>();
 
+    @OneToOne(mappedBy = "product")
+    private ProductPurchase productPurchase;
+
+
     public Product() {
     }
 

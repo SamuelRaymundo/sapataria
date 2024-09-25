@@ -17,6 +17,15 @@ public class Purchase implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @Column(nullable = false)
+    private Double total;
+
+    @Column(nullable = false)
+    private Date date;
+
+    @OneToOne(mappedBy = "purchase")
+    private ProductPurchase productPurchase;
+
     @ManyToOne
     @JoinColumn(name = "supplier_id")
     private Supplier supplier;
@@ -27,13 +36,6 @@ public class Purchase implements Serializable {
 
     @OneToMany(mappedBy = "purchase")
     private Set<Installment> installments = new HashSet<>();
-
-
-    @Column(nullable = false)
-    private Double total;
-
-    @Column(nullable = false)
-    private Date date;
 
 
     public Purchase() {

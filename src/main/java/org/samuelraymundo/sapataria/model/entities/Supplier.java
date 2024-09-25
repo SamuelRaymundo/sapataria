@@ -31,7 +31,7 @@ public class Supplier implements Serializable {
     private String address;
 
     @Column(nullable = false, length = 4)
-    private String addresNumber;
+    private String addressNumber;
 
     @Column(nullable = false, length = 100)
     private String complement;
@@ -106,11 +106,11 @@ public class Supplier implements Serializable {
     }
 
     public String getAddresNumber() {
-        return addresNumber;
+        return addressNumber;
     }
 
     public void setAddresNumber(String addresNumber) {
-        this.addresNumber = addresNumber;
+        this.addressNumber = addressNumber;
     }
 
     public String getComplement() {

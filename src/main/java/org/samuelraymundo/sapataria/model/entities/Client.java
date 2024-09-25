@@ -44,7 +44,7 @@ public class Client implements Serializable {
     private String address;
 
     @Column(nullable = false, length = 4)
-    private String addresNumber;
+    private String addressNumber;
 
     @Column(nullable = false, length = 100)
     private String neighborhood;
@@ -148,11 +148,11 @@ public class Client implements Serializable {
     }
 
     public String getAddresNumber() {
-        return addresNumber;
+        return addressNumber;
     }
 
-    public void setAddresNumber(String addresNumber) {
-        this.addresNumber = addresNumber;
+    public void setAddresNumber(String addressNumber) {
+        this.addressNumber = addressNumber;
     }
 
     public String getNeighborhood() {
