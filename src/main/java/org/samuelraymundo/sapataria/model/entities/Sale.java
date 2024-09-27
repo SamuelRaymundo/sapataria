@@ -1,5 +1,7 @@
 package org.samuelraymundo.sapataria.model.entities;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 
 import java.io.Serializable;
@@ -20,6 +22,7 @@ public class Sale implements Serializable {
     private String local;
 
     @Column(nullable = false)
+    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd")
     private Date date;
 
     @Column(nullable = false)
@@ -30,20 +33,37 @@ public class Sale implements Serializable {
     private String taxCupon;
 
     @ManyToOne
+    @JsonIgnore
     @JoinColumn(name = "client_id")
     private Client client;
 
     @ManyToOne
+    @JsonIgnore
     @JoinColumn(name = "employee_id")
     private Employee employee;
 
     @OneToMany(mappedBy = "sale")
+    @JsonIgnore
     private Set<SaleProd> saleProd = new HashSet<>();
 
     @OneToMany(mappedBy = "sale")
+    @JsonIgnore
     private Set<Installment> installments = new HashSet<>();
 
     public Sale() {
+    }
+
+
+    public Sale(Long id, String local, Date date, Double total, String taxCupon, Client client, Employee employee, Set<SaleProd> saleProd, Set<Installment> installments) {
+        this.id = id;
+        this.local = local;
+        this.date = date;
+        this.total = total;
+        this.taxCupon = taxCupon;
+        this.client = client;
+        this.employee = employee;
+        this.saleProd = saleProd;
+        this.installments = installments;
     }
 
     public Long getId() {
@@ -113,4 +133,10 @@ public class Sale implements Serializable {
     public Set<SaleProd> getSaleProd() {
         return saleProd;
     }
+
+    public Set<Installment> getInstallments() {
+        return installments;
+    }
+
+
 }

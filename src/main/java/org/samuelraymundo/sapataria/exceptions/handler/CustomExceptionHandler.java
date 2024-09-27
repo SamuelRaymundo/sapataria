@@ -7,7 +7,9 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
 
+import java.time.Instant;
 import java.time.ZonedDateTime;
+import java.util.Date;
 
 @RestControllerAdvice
 public class CustomExceptionHandler {
@@ -18,7 +20,7 @@ public class CustomExceptionHandler {
         ExceptionResponse exceptionResponse = new ExceptionResponse(
                 status,
                 exception.getMessage(),
-                ZonedDateTime.now()
+                Date.from(Instant.now())
         );
         return new ResponseEntity<>(exceptionResponse, status);
     }
@@ -31,7 +33,8 @@ public class CustomExceptionHandler {
         ExceptionResponse exceptionResponse = new ExceptionResponse(
                 status,
                 exception.getMessage(),
-                ZonedDateTime.now());
+                Date.from(Instant.now())
+        );
         return new ResponseEntity<>(exceptionResponse, status);
     }
 }

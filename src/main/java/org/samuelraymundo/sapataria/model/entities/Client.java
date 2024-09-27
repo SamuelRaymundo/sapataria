@@ -1,5 +1,6 @@
 package org.samuelraymundo.sapataria.model.entities;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import jakarta.persistence.*;
 
 import java.io.Serializable;
@@ -62,6 +63,7 @@ public class Client implements Serializable {
     private String uf;
 
     @OneToMany(mappedBy = "client")
+    @JsonBackReference
     private Set<Sale> sale = new HashSet<>();
 
     public Client() {

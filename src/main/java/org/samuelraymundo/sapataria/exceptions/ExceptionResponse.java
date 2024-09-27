@@ -1,16 +1,19 @@
 package org.samuelraymundo.sapataria.exceptions;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import org.springframework.http.HttpStatus;
 
-import java.time.ZonedDateTime;
+import java.util.Date;
 
 public class ExceptionResponse {
 
     private HttpStatus status;
     private String message;
-    private ZonedDateTime timestamp;
 
-    public ExceptionResponse(HttpStatus status, String message, ZonedDateTime timestamp) {
+    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd HH:mm:ss")
+    private Date timestamp;
+
+    public ExceptionResponse(HttpStatus status, String message, Date timestamp) {
         this.status = status;
         this.message = message;
         this.timestamp = timestamp;
@@ -24,7 +27,7 @@ public class ExceptionResponse {
         return message;
     }
 
-    public ZonedDateTime getTimestamp() {
+    public Date getTimestamp() {
         return timestamp;
     }
 }
