@@ -33,4 +33,10 @@ public class ClientService {
                 .orElseThrow(() -> new ResourceNotFoundException("There is no client with the id " + client.getId()));
         return updateClient;
     }
+
+    public void delete(Long id) {
+        var client = clientRepository.findById(id)
+                .orElseThrow(() -> new ResourceNotFoundException("There is no client with the id " + id));
+        clientRepository.delete(client);
+    }
 }

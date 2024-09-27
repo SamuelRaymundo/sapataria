@@ -4,10 +4,7 @@ import org.samuelraymundo.sapataria.model.entities.Client;
 import org.samuelraymundo.sapataria.services.ClientService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.samuelraymundo.sapataria.util.MediaType;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -28,5 +25,20 @@ public class ClientController {
     @GetMapping(produces = {MediaType.APPLICATION_JSON,MediaType.APPLICATION_XML,"application/x-yml"})
     public List<Client> findAll() {
         return clientService.findAll();
+    }
+
+    @PutMapping(produces = {MediaType.APPLICATION_JSON,MediaType.APPLICATION_XML,"application/x-yml"},consumes = {MediaType.APPLICATION_JSON,MediaType.APPLICATION_XML,"application/x-yml"})
+    public Client update(@RequestBody Client client) {
+        return clientService.update(client);
+    }
+
+    @PostMapping(produces = {MediaType.APPLICATION_JSON,MediaType.APPLICATION_XML,"application/x-yml"},consumes = {MediaType.APPLICATION_JSON,MediaType.APPLICATION_XML,"application/x-yml"})
+    public Client create(@RequestBody Client client) {
+        return clientService.create(client);
+    }
+
+    @DeleteMapping("/{id}")
+    public void delete(@PathVariable Long id) {
+        clientService.delete(id);
     }
 }
