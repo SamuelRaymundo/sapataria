@@ -1,4 +1,4 @@
-package org.samuelraymundo.sapataria.converter;
+package org.samuelraymundo.sapataria.serialization.converter;
 import com.fasterxml.jackson.annotation.JsonInclude;
 
 import com.fasterxml.jackson.dataformat.yaml.YAMLMapper;

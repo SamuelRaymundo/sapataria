@@ -6,21 +6,21 @@ CREATE TABLE `tb_category` (
 
 CREATE TABLE IF NOT EXISTS `tb_client` (
                              `id` bigint NOT NULL AUTO_INCREMENT,
-                             `address` varchar(100) NOT NULL,
-                             `address_number` varchar(4) NOT NULL,
+                             `address` varchar(100),
+                             `address_number` varchar(4),
                              `birth_date` datetime(6) NOT NULL,
                              `cellphone_number` varchar(14) NOT NULL,
-                             `cep` varchar(10) NOT NULL,
-                             `city` varchar(100) NOT NULL,
-                             `complement` varchar(100) NOT NULL,
+                             `cep` varchar(10),
+                             `city` varchar(100),
+                             `complement` varchar(100),
                              `cpf` varchar(11) NOT NULL,
                              `email` varchar(100) NOT NULL,
                              `name` varchar(100) NOT NULL,
-                             `neighborhood` varchar(100) NOT NULL,
+                             `neighborhood` varchar(100),
                              `password` varchar(100) NOT NULL,
-                             `phone_number` varchar(15) NOT NULL,
-                             `rg` varchar(17) NOT NULL,
-                             `uf` varchar(2) NOT NULL,
+                             `phone_number` varchar(15),
+                             `rg` varchar(17),
+                             `uf` varchar(2),
                              PRIMARY KEY (`id`)
 );
 

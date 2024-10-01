@@ -1,6 +1,7 @@
 package org.samuelraymundo.sapataria.model.entities;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import jakarta.persistence.*;
 
 import java.io.Serializable;
@@ -20,7 +21,7 @@ public class Client implements Serializable {
     @Column(nullable = false)
     private Date birthDate;
 
-    @Column(nullable = false, length = 17)
+    @Column(length = 17)
     private String rg;
 
     @Column(nullable = false, length = 11)
@@ -36,30 +37,31 @@ public class Client implements Serializable {
     private String email;
 
     @Column(nullable = false, length = 14)
+    @JsonProperty("cellphone_number")
     private String cellphoneNumber;
 
-    @Column(nullable = false, length = 15)
+    @Column(length = 15)
     private String phoneNumber;
 
-    @Column(nullable = false, length = 100)
+    @Column(length = 100)
     private String address;
 
-    @Column(nullable = false, length = 4)
+    @Column(length = 4)
     private String addressNumber;
 
-    @Column(nullable = false, length = 100)
+    @Column(length = 100)
     private String neighborhood;
 
-    @Column(nullable = false, length = 100)
+    @Column(length = 100)
     private String complement;
 
-    @Column(nullable = false, length = 100)
+    @Column(length = 100)
     private String city;
 
-    @Column(nullable = false, length = 10)
+    @Column(length = 10)
     private String cep;
 
-    @Column(nullable = false, length = 2)
+    @Column(length = 2)
     private String uf;
 
     @OneToMany(mappedBy = "client")

@@ -1,5 +1,7 @@
 package org.samuelraymundo.sapataria.services;
 
+import org.samuelraymundo.sapataria.mapper.DozerMapper;
+import org.samuelraymundo.sapataria.model.dto.ClientRegisterDto;
 import org.samuelraymundo.sapataria.model.entities.Client;
 import org.samuelraymundo.sapataria.exceptions.ResourceNotFoundException;
 import org.samuelraymundo.sapataria.repositories.ClientRepository;
@@ -24,8 +26,10 @@ public class ClientService {
         return clientRepository.findAll();
     }
 
-    public Client create(Client client) {
-        return clientRepository.save(client);
+    public ClientRegisterDto registerClient(ClientRegisterDto client) {
+        var entity = DozerMapper.parseObject(client, Client.class);
+        var vo = clientRepository.save(entity);
+        return DozerMapper.parseObject(vo, ClientRegisterDto.class);
     }
 
     public Client update(Client client) {

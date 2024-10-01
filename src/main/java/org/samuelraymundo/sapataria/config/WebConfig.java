@@ -1,6 +1,6 @@
 package org.samuelraymundo.sapataria.config;
 
-import org.samuelraymundo.sapataria.converter.YamlJackson2HttpMessageConverter;
+import org.samuelraymundo.sapataria.serialization.converter.YamlJackson2HttpMessageConverter;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.http.MediaType;
 import org.springframework.http.converter.HttpMessageConverter;

@@ -1,5 +1,6 @@
 package org.samuelraymundo.sapataria.controller;
 
+import org.samuelraymundo.sapataria.model.dto.ClientRegisterDto;
 import org.samuelraymundo.sapataria.model.entities.Client;
 import org.samuelraymundo.sapataria.services.ClientService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -33,8 +34,8 @@ public class ClientController {
     }
 
     @PostMapping(produces = {MediaType.APPLICATION_JSON,MediaType.APPLICATION_XML,"application/x-yml"},consumes = {MediaType.APPLICATION_JSON,MediaType.APPLICATION_XML,"application/x-yml"})
-    public Client create(@RequestBody Client client) {
-        return clientService.create(client);
+    public ClientRegisterDto registerClient(@RequestBody ClientRegisterDto client) {
+        return clientService.registerClient(client);
     }
 
     @DeleteMapping("/{id}")
