@@ -47,6 +47,7 @@ public class Client implements Serializable {
     private String address;
 
     @Column(length = 4)
+    @JsonProperty("address_number")
     private String addressNumber;
 
     @Column(length = 100)

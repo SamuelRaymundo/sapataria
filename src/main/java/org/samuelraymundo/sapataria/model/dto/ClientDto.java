@@ -2,12 +2,10 @@ package org.samuelraymundo.sapataria.model.dto;
 
 import java.io.Serializable;
 import java.util.Date;
-
 import java.util.Objects;
 
 
-public class ClientRegisterDto implements Serializable {
-    private static final long serialVersionUID = 1L;
+public class ClientDto implements Serializable {
 
     private Long id;
 
@@ -18,8 +16,6 @@ public class ClientRegisterDto implements Serializable {
     private String cpf;
 
     private String name;
-
-    private String password;
 
     private String email;
 
@@ -40,6 +36,7 @@ public class ClientRegisterDto implements Serializable {
     private String cep;
 
     private String uf;
+
 
     public Long getId() {
         return id;
@@ -79,14 +76,6 @@ public class ClientRegisterDto implements Serializable {
 
     public void setName(String name) {
         this.name = name;
-    }
-
-    public String getPassword() {
-        return password;
-    }
-
-    public void setPassword(String password) {
-        this.password = password;
     }
 
     public String getEmail() {
@@ -173,12 +162,12 @@ public class ClientRegisterDto implements Serializable {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        ClientRegisterDto that = (ClientRegisterDto) o;
-        return Objects.equals(id, that.id) && Objects.equals(birthDate, that.birthDate) && Objects.equals(rg, that.rg) && Objects.equals(cpf, that.cpf) && Objects.equals(name, that.name) && Objects.equals(password, that.password) && Objects.equals(email, that.email) && Objects.equals(cellphoneNumber, that.cellphoneNumber) && Objects.equals(phoneNumber, that.phoneNumber) && Objects.equals(address, that.address) && Objects.equals(addressNumber, that.addressNumber) && Objects.equals(neighborhood, that.neighborhood) && Objects.equals(complement, that.complement) && Objects.equals(city, that.city) && Objects.equals(cep, that.cep) && Objects.equals(uf, that.uf);
+        ClientDto clientDto = (ClientDto) o;
+        return Objects.equals(id, clientDto.id) && Objects.equals(birthDate, clientDto.birthDate) && Objects.equals(rg, clientDto.rg) && Objects.equals(cpf, clientDto.cpf) && Objects.equals(name, clientDto.name) && Objects.equals(email, clientDto.email) && Objects.equals(cellphoneNumber, clientDto.cellphoneNumber) && Objects.equals(phoneNumber, clientDto.phoneNumber) && Objects.equals(address, clientDto.address) && Objects.equals(addressNumber, clientDto.addressNumber) && Objects.equals(neighborhood, clientDto.neighborhood) && Objects.equals(complement, clientDto.complement) && Objects.equals(city, clientDto.city) && Objects.equals(cep, clientDto.cep) && Objects.equals(uf, clientDto.uf);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, birthDate, rg, cpf, name, password, email, cellphoneNumber, phoneNumber, address, addressNumber, neighborhood, complement, city, cep, uf);
+        return Objects.hash(id, birthDate, rg, cpf, name, email, cellphoneNumber, phoneNumber, address, addressNumber, neighborhood, complement, city, cep, uf);
     }
 }
