@@ -156,7 +156,7 @@ public class Client implements Serializable {
         return addressNumber;
     }
 
-    public void setAddresNumber(String addressNumber) {
+    public void setAddressNumber(String addressNumber) {
         this.addressNumber = addressNumber;
     }
 

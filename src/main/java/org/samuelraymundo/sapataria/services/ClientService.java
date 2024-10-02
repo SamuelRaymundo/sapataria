@@ -1,8 +1,9 @@
 package org.samuelraymundo.sapataria.services;
 
 import org.samuelraymundo.sapataria.mapper.DozerMapper;
-import org.samuelraymundo.sapataria.model.dto.client.ClientDto;
-import org.samuelraymundo.sapataria.model.dto.client.ClientRegisterDto;
+
+import org.samuelraymundo.sapataria.model.dto.ClientDto;
+import org.samuelraymundo.sapataria.model.dto.ClientRegisterDto;
 import org.samuelraymundo.sapataria.model.entities.Client;
 import org.samuelraymundo.sapataria.exceptions.ResourceNotFoundException;
 import org.samuelraymundo.sapataria.repositories.ClientRepository;
@@ -45,7 +46,7 @@ public class ClientService {
         updateClient.setCellphoneNumber(client.getCellphoneNumber());
         updateClient.setPhoneNumber(client.getPhoneNumber());
         updateClient.setAddress(client.getAddress());
-        updateClient.setAddresNumber(client.getAddressNumber());
+        updateClient.setAddressNumber(client.getAddressNumber());
         updateClient.setNeighborhood(client.getNeighborhood());
         updateClient.setComplement(client.getComplement());
         updateClient.setCity(client.getCity());

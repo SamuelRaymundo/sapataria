@@ -41,6 +41,9 @@ public class ClientRegisterDto implements Serializable {
 
     private String uf;
 
+    public ClientRegisterDto() {
+    }
+
     public Long getId() {
         return id;
     }

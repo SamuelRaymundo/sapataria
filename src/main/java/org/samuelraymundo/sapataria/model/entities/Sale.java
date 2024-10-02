@@ -2,6 +2,7 @@ package org.samuelraymundo.sapataria.model.entities;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.sun.istack.NotNull;
 import jakarta.persistence.*;
 
 import java.io.Serializable;
@@ -26,7 +27,6 @@ public class Sale implements Serializable {
     private Date date;
 
     @Column(nullable = false)
-
     private Double total;
 
     @Column(nullable = false, length = 3)
@@ -74,12 +74,12 @@ public class Sale implements Serializable {
         this.id = id;
     }
 
-    public String getlocal() {
+    public String getLocal() {
         return local;
     }
 
-    public void setlocal(String local) {
-        local = local;
+    public void setLocal(String local) {
+        this.local = local;
     }
 
     public Date getDate() {
@@ -120,14 +120,6 @@ public class Sale implements Serializable {
 
     public void setEmployee(Employee employee) {
         this.employee = employee;
-    }
-
-    public String getLocal() {
-        return local;
-    }
-
-    public void setLocal(String local) {
-        this.local = local;
     }
 
     public Set<SaleProd> getSaleProd() {

@@ -37,6 +37,8 @@ public class ClientDto implements Serializable {
 
     private String uf;
 
+    public ClientDto() {
+    }
 
     public Long getId() {
         return id;
