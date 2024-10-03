@@ -1,64 +1,37 @@
-package org.samuelraymundo.sapataria.model.entities;
+package org.samuelraymundo.sapataria.model.dto;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
-import jakarta.persistence.*;
 
-import java.io.Serializable;
-import java.util.HashSet;
-import java.util.Set;
+import java.util.Objects;
 
-@Entity
-@Table(name = "tb_supplier")
-public class Supplier implements Serializable {
-    private static final long serialVersionUID = 1L;
+public class SupplierDto {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+
     private Long id;
 
-    @Column(nullable = false, length = 18)
     private String cnpj;
 
-    @Column(nullable = false)
     private String ie;
 
-    @Column(nullable = false, length = 50)
-    @JsonProperty("fantasy_name")
     private String fantasyName;
 
-    @Column(nullable = false)
-    @JsonProperty("social_reason")
     private String socialReason;
 
-    @Column(nullable = false, length = 100)
     private String address;
 
-    @Column(nullable = false, length = 4)
-    @JsonProperty("address_number")
     private String addressNumber;
 
-    @Column(nullable = false, length = 100)
     private String complement;
 
-    @Column(nullable = false, length = 100)
     private String neighborhood;
 
-    @Column(nullable = false, length = 100)
     private String city;
 
-    @Column(nullable = false, length = 2)
     private String uf;
 
-    @Column(nullable = false, length = 10)
     private String cep;
 
-    @OneToMany(mappedBy = "supplier")
-    private Set<Purchase> purchase = new HashSet<>();
-
-    @OneToMany(mappedBy = "supplier")
-    private Set<Phone> phones = new HashSet<>();
-
-    public Supplier() {
+    public SupplierDto() {
     }
 
     public Long getId() {
@@ -157,11 +130,17 @@ public class Supplier implements Serializable {
         this.cep = cep;
     }
 
-    public Set<Purchase> getPurchase() {
-        return purchase;
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        SupplierDto that = (SupplierDto) o;
+        return Objects.equals(id, that.id) && Objects.equals(cnpj, that.cnpj) && Objects.equals(ie, that.ie) && Objects.equals(fantasyName, that.fantasyName) && Objects.equals(socialReason, that.socialReason) && Objects.equals(address, that.address) && Objects.equals(addressNumber, that.addressNumber) && Objects.equals(complement, that.complement) && Objects.equals(neighborhood, that.neighborhood) && Objects.equals(city, that.city) && Objects.equals(uf, that.uf) && Objects.equals(cep, that.cep);
     }
 
-    public Set<Phone> getPhones() {
-        return phones;
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, cnpj, ie, fantasyName, socialReason, address, addressNumber, complement, neighborhood, city, uf, cep);
     }
 }
+

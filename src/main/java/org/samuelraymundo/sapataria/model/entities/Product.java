@@ -29,11 +29,11 @@ public class Product implements Serializable {
     @JoinColumn(name = "category_id")
     private Category category;
 
-    @OneToMany(mappedBy = "product")
-    private Set<Size> sizes = new HashSet<>();
-
     @OneToOne(mappedBy = "product")
     private ProductPurchase productPurchase;
+
+    @OneToMany(mappedBy = "product")
+    private Set<Size> sizes = new HashSet<>();
 
 
     public Product() {
