@@ -28,8 +28,8 @@ public class SaleService {
 
     public SaleDto create(SaleDto saleDto) {
         var entity = DozerMapper.parseObject(saleDto, Sale.class);
-        var vo = saleRepository.save(entity);
-        return DozerMapper.parseObject(vo, SaleDto.class);
+        var dto = saleRepository.save(entity);
+        return DozerMapper.parseObject(dto, SaleDto.class);
     }
 
     public SaleDto update(SaleDto saleDto) {
@@ -41,8 +41,8 @@ public class SaleService {
         updatedEntity.setTotal(saleDto.getTotal());
         updatedEntity.setTaxCupon(saleDto.getTaxCupon());
 
-        var vo = DozerMapper.parseObject(saleRepository.save(updatedEntity), SaleDto.class);
-        return DozerMapper.parseObject(vo, SaleDto.class);
+        var dto = DozerMapper.parseObject(saleRepository.save(updatedEntity), SaleDto.class);
+        return DozerMapper.parseObject(dto, SaleDto.class);
     }
 
     public void delete(Long id) {

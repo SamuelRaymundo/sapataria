@@ -152,7 +152,7 @@ public class Client implements Serializable {
         this.address = address;
     }
 
-    public String getAddresNumber() {
+    public String getAddressNumber() {
         return addressNumber;
     }
 

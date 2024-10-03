@@ -31,8 +31,8 @@ public class ClientService {
 
     public ClientRegisterDto registerClient(ClientRegisterDto client) {
         var entity = DozerMapper.parseObject(client, Client.class);
-        var vo = clientRepository.save(entity);
-        return DozerMapper.parseObject(vo, ClientRegisterDto.class);
+        var dto = clientRepository.save(entity);
+        return DozerMapper.parseObject(dto, ClientRegisterDto.class);
     }
 
     public ClientRegisterDto updateRegisterClient(ClientRegisterDto client) {
@@ -52,8 +52,8 @@ public class ClientService {
         updateClient.setCity(client.getCity());
         updateClient.setCep(client.getCep());
         updateClient.setUf(client.getUf());
-        var vo = DozerMapper.parseObject(clientRepository.save(updateClient), ClientRegisterDto.class);
-        return vo;
+        var dto = DozerMapper.parseObject(clientRepository.save(updateClient), ClientRegisterDto.class);
+        return dto;
     }
 
     public void delete(Long id) {
