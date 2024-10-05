@@ -26,7 +26,7 @@ public class Installment implements Serializable {
     @Column
     private Date installmentPaymentDate;
 
-    @Column(nullable = false)
+    @Column
     private Double installmentAmount;
 
     @ManyToOne

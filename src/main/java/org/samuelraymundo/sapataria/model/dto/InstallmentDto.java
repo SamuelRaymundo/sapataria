@@ -17,7 +17,6 @@ public class InstallmentDto implements Serializable {
 
     private Date installmentDueDate;
 
-    @Column
     private Date installmentPaymentDate;
 
     private Double installmentAmount;

@@ -33,7 +33,7 @@ CREATE TABLE IF NOT EXISTS `tb_employee` (
 
 CREATE TABLE IF NOT EXISTS `tb_installment` (
                                   `id` bigint NOT NULL AUTO_INCREMENT,
-                                  `installment_amount` double NOT NULL,
+                                  `installment_amount` double DEFAULT NULL ,
                                   `installment_due_date` datetime(6) NOT NULL,
                                   `installment_payment_date` datetime(6) DEFAULT NULL,
                                   `installment_price` double NOT NULL,
