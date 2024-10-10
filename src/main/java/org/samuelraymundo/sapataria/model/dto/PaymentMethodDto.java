@@ -1,10 +1,10 @@
 package org.samuelraymundo.sapataria.model.dto;
 
-
 import org.samuelraymundo.sapataria.model.enums.PaymentMethodEnum;
 
 import java.io.Serializable;
 import java.util.Objects;
+
 
 public class PaymentMethodDto implements Serializable {
 

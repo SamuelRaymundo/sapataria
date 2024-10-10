@@ -23,7 +23,8 @@ public class InstallmentService {
     }
     
     public List<InstallmentDto> findAll() {
-        return DozerMapper.parseListObject(installmentRepository.findAll(), InstallmentDto.class);
+        List<Installment> teste = installmentRepository.findAll();
+        return DozerMapper.parseListObject(teste, InstallmentDto.class);
     }
     
     public InstallmentDto create(InstallmentDto installmentDto) {

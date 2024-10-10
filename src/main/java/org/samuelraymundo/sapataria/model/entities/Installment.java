@@ -41,6 +41,7 @@ public class Installment implements Serializable {
     @JoinColumn(name = "purchase_id")
     private Purchase purchase;
 
+
     public Installment() {
     }
 

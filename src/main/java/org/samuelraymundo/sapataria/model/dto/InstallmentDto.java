@@ -1,6 +1,5 @@
 package org.samuelraymundo.sapataria.model.dto;
 
-import jakarta.persistence.*;
 import org.samuelraymundo.sapataria.model.entities.PaymentMethod;
 
 import java.io.Serializable;
@@ -21,7 +20,7 @@ public class InstallmentDto implements Serializable {
 
     private Double installmentAmount;
 
-    private PaymentMethod paymentMethod;
+    private PaymentMethodDto paymentMethod;
 
     private SaleDto sale;
 
@@ -78,11 +77,11 @@ public class InstallmentDto implements Serializable {
         this.installmentAmount = installmentAmount;
     }
 
-    public PaymentMethod getPaymentMethod() {
+    public PaymentMethodDto getPaymentMethod() {
         return paymentMethod;
     }
 
-    public void setPaymentMethod(PaymentMethod paymentMethod) {
+    public void setPaymentMethod(PaymentMethodDto paymentMethod) {
         this.paymentMethod = paymentMethod;
     }
 

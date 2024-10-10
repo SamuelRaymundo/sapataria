@@ -23,19 +23,9 @@ public class InstallmentController {
     }
 
     @GetMapping(produces = {MediaType.APPLICATION_JSON, MediaType.APPLICATION_XML, "application/x-yml"})
-    public ResponseEntity<List<InstallmentDto>> findAll() {
-        try {
-            List<InstallmentDto> installments = installmentService.findAll();
-            if (installments == null || installments.isEmpty()) {
-                return new ResponseEntity<>(HttpStatus.NO_CONTENT);  // 204 No Content if no data
-            }
-            return new ResponseEntity<>(installments, HttpStatus.OK);
-        } catch (Exception e) {
-            return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);  // Return 500 in case of an error
-        }
+    public List<InstallmentDto> findAll() {
+        return installmentService.findAll();
     }
-
-
 
     @PostMapping(consumes = {MediaType.APPLICATION_JSON, MediaType.APPLICATION_XML,"application/x-yml"}, produces = {MediaType.APPLICATION_JSON, MediaType.APPLICATION_XML})
     public InstallmentDto create(@RequestBody InstallmentDto installmentDto) {
