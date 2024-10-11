@@ -17,6 +17,7 @@ public class PaymentMethod implements Serializable {
     private Long id;
 
     @Column(nullable = false)
+    @Enumerated(EnumType.STRING)
     private PaymentMethodEnum paymentMethod;
 
     @OneToMany(mappedBy = "paymentMethod")

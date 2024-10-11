@@ -46,9 +46,8 @@ CREATE TABLE IF NOT EXISTS `tb_installment` (
 
 CREATE TABLE IF NOT EXISTS `tb_payment_method` (
                                      `id` bigint NOT NULL AUTO_INCREMENT,
-                                     `payment_method` tinyint NOT NULL,
-                                     PRIMARY KEY (`id`),
-                                     CONSTRAINT `tb_payment_method_chk_1` CHECK ((`payment_method` in (1,2,3,4)))
+                                     `payment_method` VARCHAR(10) NOT NULL,
+                                     PRIMARY KEY (`id`)
 );
 
 CREATE TABLE IF NOT EXISTS `tb_phone` (

@@ -1,5 +1,6 @@
 package org.samuelraymundo.sapataria.model.entities;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 
 import java.io.Serializable;
@@ -30,14 +31,17 @@ public class Installment implements Serializable {
     private Double installmentAmount;
 
     @ManyToOne
+    @JsonIgnore
     @JoinColumn(name = "payment_method_id")
     private PaymentMethod paymentMethod;
 
     @ManyToOne
+    @JsonIgnore
     @JoinColumn(name = "sale_id")
     private Sale sale;
 
     @ManyToOne
+    @JsonIgnore
     @JoinColumn(name = "purchase_id")
     private Purchase purchase;
 

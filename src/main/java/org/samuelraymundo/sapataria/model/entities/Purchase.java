@@ -1,6 +1,7 @@
 package org.samuelraymundo.sapataria.model.entities;
 
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 
 import java.io.Serializable;
@@ -35,6 +36,7 @@ public class Purchase implements Serializable {
     private Employee employee;
 
     @OneToMany(mappedBy = "purchase")
+    @JsonIgnore
     private Set<Installment> installments = new HashSet<>();
 
 

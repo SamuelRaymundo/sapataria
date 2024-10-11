@@ -29,10 +29,10 @@ INSERT INTO `tb_employee` VALUES (1,'Alice Smith','(123) 456-7890'),
 
 
 INSERT INTO `tb_payment_method` VALUES
-                                    (1, 1),
-                                    (2, 2),
-                                    (3, 3),
-                                    (4, 4);
+                                    (1, "CREDIT"),
+                                    (2, "DEBIT"),
+                                    (3, "CASH"),
+                                    (4, "PIX");
 
 
 
